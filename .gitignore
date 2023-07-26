@@ -12,3 +12,6 @@
 /build
 
 .php-cs-fixer.cache
+.fleet
+.idea
+.DS_Store
