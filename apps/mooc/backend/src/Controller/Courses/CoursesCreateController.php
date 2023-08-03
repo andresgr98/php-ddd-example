@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace CodelyTv\Apps\Mooc\Backend\Controller\Courses;
 
 use CodelyTv\Mooc\Courses\Application\Create\CreateCourseCommand;
-use CodelyTv\Mooc\Shared\Domain\Courses\CourseId;
 use CodelyTv\Shared\Infrastructure\Symfony\ApiController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;

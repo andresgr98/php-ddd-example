@@ -6,12 +6,13 @@ namespace CodelyTv\Mooc\Courses\Application\Find;
 
 use CodelyTv\Shared\Domain\Bus\Command\Command;
 
-final class GetCourseCommand implements Command
+final class FindCourseCommand implements Command
 {
     public function __construct(private readonly string $id)
     {
+        
     }
-
+    
     public function id(): string
     {
         return $this->id;

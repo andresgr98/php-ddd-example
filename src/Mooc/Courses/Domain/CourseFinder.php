@@ -2,11 +2,8 @@
 
 declare(strict_types=1);
 
-namespace CodelyTv\Mooc\Courses\Application\Find;
+namespace CodelyTv\Mooc\Courses\Domain;
 
-use CodelyTv\Mooc\Courses\Domain\Course;
-use CodelyTv\Mooc\Courses\Domain\CourseNotExist;
-use CodelyTv\Mooc\Courses\Domain\CourseRepository;
 use CodelyTv\Mooc\Shared\Domain\Courses\CourseId;
 
 final class CourseFinder
@@ -19,7 +16,7 @@ final class CourseFinder
     {
         $course = $this->repository->search($id);
 
-        if (null === $course) {
+        if (!$course instanceof Course) {
             throw new CourseNotExist($id);
         }
 

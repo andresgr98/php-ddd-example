@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace CodelyTv\Apps\Mooc\Backend\Controller\Courses;
 
-use CodelyTv\Mooc\Courses\Application\Create\CreateCourseCommand;
+use CodelyTv\Mooc\Courses\Application\Update\RenameCourseCommand;
 use CodelyTv\Shared\Infrastructure\Symfony\ApiController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -14,7 +14,7 @@ final class CoursesPutController extends ApiController
     public function __invoke(string $id, Request $request): Response
     {
         $this->dispatch(
-            new CreateCourseCommand(
+            new RenameCourseCommand(
                 $id,
                 (string) $request->request->get('name'),
                 (string) $request->request->get('duration')
