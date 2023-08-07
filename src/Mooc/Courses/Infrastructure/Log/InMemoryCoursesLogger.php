@@ -10,7 +10,7 @@ class InMemoryCoursesLogger implements LogRepository
         private string $coursesTag = "[COURSES]";
         private string $infoTags = "[INFO]";
 
-        public function info($logMessage): void
+        public function info(string $logMessage): void
         {
                 $logTime = date("Y-m-d H:i:s");
                 $logLine = "[$logTime] $this->infoTags $this->coursesTag $logMessage" . PHP_EOL;

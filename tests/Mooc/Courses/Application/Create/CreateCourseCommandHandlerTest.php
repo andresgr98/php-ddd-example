@@ -18,7 +18,7 @@ final class CreateCourseCommandHandlerTest extends CoursesModuleUnitTestCase
     {
         parent::setUp();
 
-        $this->handler = new CreateCourseCommandHandler(new CourseCreator($this->repository(), $this->eventBus()));
+        $this->handler = new CreateCourseCommandHandler(new CourseCreator($this->repository(), $this->eventBus(), $this->logRepository()));
     }
 
     /** @test */
@@ -31,6 +31,7 @@ final class CreateCourseCommandHandlerTest extends CoursesModuleUnitTestCase
 
         $this->shouldSave($course);
         $this->shouldPublishDomainEvent($domainEvent);
+        $this->shouldLog();
 
         $this->dispatch($command, $this->handler);
     }
