@@ -10,3 +10,7 @@ courses_create:
   path: /courses
   controller: CodelyTv\Apps\Mooc\Backend\Controller\Courses\CoursesCreateController
   methods:  [POST]
+courses_get_all:
+  path: /courses
+  controller: CodelyTv\Apps\Mooc\Backend\Controller\Courses\CoursesGetAllController
+  methods: [GET]
