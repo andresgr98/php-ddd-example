@@ -1,0 +1,8 @@
+videos_post:
+    path: /videos/
+    controller: CodelyTv\Apps\Mooc\Backend\Controller\Videos\VideosCreateController
+    methods:  [POST]
+videos_put:
+    path: /videos/{id}
+    controller: CodelyTv\Apps\Mooc\Backend\Controller\Videos\VideosPutController
+    methods:  [PUT]
