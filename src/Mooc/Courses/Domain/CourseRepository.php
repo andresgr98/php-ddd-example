@@ -12,5 +12,5 @@ interface CourseRepository
 
     public function search(CourseId $id): ?Course;
 
-    public function findAll(): array;
+    public function findAll(): Courses;
 }

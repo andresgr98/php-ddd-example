@@ -12,6 +12,6 @@ final class CourseResponseConverter
             $course->id()->value(),
             $course->duration()->value(),
             $course->name()->value()
-            );
+        );
     }
 } 

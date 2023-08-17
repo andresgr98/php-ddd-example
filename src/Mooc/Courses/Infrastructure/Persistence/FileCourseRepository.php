@@ -6,6 +6,7 @@ namespace CodelyTv\Mooc\Courses\Infrastructure\Persistence;
 
 use CodelyTv\Mooc\Courses\Domain\Course;
 use CodelyTv\Mooc\Courses\Domain\CourseRepository;
+use CodelyTv\Mooc\Courses\Domain\Courses;
 use CodelyTv\Mooc\Shared\Domain\Courses\CourseId;
 
 final class FileCourseRepository implements CourseRepository
@@ -24,10 +25,10 @@ final class FileCourseRepository implements CourseRepository
             : null;
     }
 
-    public function findAll(): array
+    public function findAll(): Courses
     {
         //TODO: ??
-        return [];
+        return new Courses([]);
     }
     private function fileName(string $id): string
     {

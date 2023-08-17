@@ -10,14 +10,19 @@ final class CourseFinderAll
     {
     }
 
-    public function __invoke(): array
+    public function __invoke(): Courses
     {
         $courses = $this->repository->findAll();
 
-        if (empty($courses)) {
-            throw new CoursesNotFound();
-        }
+        $this->guard($courses);
 
         return $courses;
+    }
+    
+    public function guard(Courses $courses): void
+    {
+        if ($courses->isEmpty()) {
+            throw new CoursesNotFound();
+        }
     }
 }
